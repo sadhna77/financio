@@ -7,7 +7,7 @@ import Login from "./assets/components/Login";
 import { BrowserRouter } from "react-router-dom";
 import { HeroSection } from "./assets/pages/HeroSection";
 import { Dashboard } from "./assets/pages/Dashboard";
-import ProtectedRoute from "./assets/components/Protectedroute";
+import ProtectedRoute from "./assets/components/ProtectedRoute";
 import Income from "./assets/components/Income";
 import { Budget } from "./assets/components/Budget";
 import { Savings } from "./assets/components/Savings";
