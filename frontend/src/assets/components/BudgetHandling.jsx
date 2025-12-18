@@ -14,7 +14,7 @@ const BudgetHandling = () => {
 
   const fetchBudgets = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/exp/getall`, {
+      const res = await axios.get(`https://financio-qskj.onrender.com/exp/getall`, {
         params: { userId },
       });
 
@@ -27,7 +27,7 @@ const BudgetHandling = () => {
   // set active budget
   const setActiveBudget = async (budgetId) => {
     try {
-      await axios.post(`http://localhost:3000/exp/setactive/${budgetId}`, {
+      await axios.post(`https://financio-qskj.onrender.com/exp/setactive/${budgetId}`, {
         userId,
       });
 
@@ -57,7 +57,7 @@ const BudgetHandling = () => {
   const fetchDailyCheck = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/daily-check/${userId}`
+        `https://financio-qskj.onrender.com/exp/daily-check/${userId}`
       );
 
 

@@ -29,7 +29,7 @@ export const Budget = () => {
   const [incomeData, setIncomeData] = useState([]);
   const getdata = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/income", {
+      const res = await axios.get("https://financio-qskj.onrender.com/api/income", {
         params: { userId },
       });
       console.log("income",res.data);

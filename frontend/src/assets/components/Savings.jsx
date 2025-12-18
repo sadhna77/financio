@@ -113,7 +113,7 @@ export const Savings = () => {
 
     try {
       await axios.post(
-        "http://localhost:3000/exp/expense",
+        "https://financio-qskj.onrender.com/exp/expense",
         {
           userId,
           amount,
@@ -163,7 +163,7 @@ export const Savings = () => {
     try {
 
       setLoading(true)
-      const res = await axios.get("http://localhost:3000/exp/expense", {
+      const res = await axios.get("https://financio-qskj.onrender.com/exp/expense", {
         params: { userId },
       });
       console.log("Fetched Expenses:", res.data);
@@ -180,7 +180,7 @@ export const Savings = () => {
 
     console.log(startDate.toISOString());
     try {
-      const res = await axios.get("http://localhost:3000/exp/filteredexpense", {
+      const res = await axios.get("https://financio-qskj.onrender.com/exp/filteredexpense", {
         params: {
           startDate: startDate.toISOString(),
           endDate: endDate.toISOString(),
@@ -218,7 +218,7 @@ export const Savings = () => {
   // const [Savingamount, setSavingAmount] = useState();
   const handleBudgetPlan = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/exp/Budgetplan", {
+      const res = await axios.post("https://financio-qskj.onrender.com/exp/Budgetplan", {
         userId,
         budgetType,
         Budgetdate,
@@ -235,7 +235,7 @@ export const Savings = () => {
   const deleteExpense = async (id) => {
     try {
       const token = localStorage.getItem("authtoken");
-      await axios.delete(`http://localhost:3000/exp/expense/${id}`, {
+      await axios.delete(`https://financio-qskj.onrender.com/exp/expense/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

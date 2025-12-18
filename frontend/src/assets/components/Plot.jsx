@@ -34,7 +34,7 @@ useEffect(() => {
       const startDate = new Date(year, 0, 1);   // 1 Jan
       const endDate = new Date(year, 11, 31);   // 31 Dec
 
-      const res = await axios.get("http://localhost:3000/exp/filteredexpense", {
+      const res = await axios.get("https://financio-qskj.onrender.com/exp/filteredexpense", {
         params: {
           startDate: startDate.toISOString(),
           endDate: endDate.toISOString(),
@@ -58,7 +58,7 @@ useEffect(() => {
 
   const handleFilter = async ({ startDate, endDate }, type) => {
     try {
-      const res = await axios.get("http://localhost:3000/exp/filteredexpense", {
+      const res = await axios.get("https://financio-qskj.onrender.com/exp/filteredexpense", {
         params: {
           startDate: startDate.toISOString(),
           endDate: endDate.toISOString(),

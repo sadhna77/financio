@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import axios from "axios";
@@ -14,7 +20,7 @@ const BudgetMeter = ({ theme }) => {
     if (!userId) return;
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/daily-check/${userId}`
+        `https://financio-qskj.onrender.com/exp/daily-check/${userId}`
       );
 
       const { todaySpent, avgDailyLimit, status } = res.data;
@@ -86,7 +92,7 @@ const BudgetMeter = ({ theme }) => {
     if (!userId) return;
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/today-saving/${userId}`
+        `https://financio-qskj.onrender.com/exp/today-saving/${userId}`
       );
 
       const { avgDailyLimit, todaySpent, todaySaved } = res.data;

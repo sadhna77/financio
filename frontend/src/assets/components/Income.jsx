@@ -93,7 +93,7 @@ useEffect(() => {
     try {
       const token = localStorage.getItem("authtoken");
       await axios.post(
-        "http://localhost:3000/api/income",
+        "https://financio-qskj.onrender.com/api/income",
         { ...income, userId },
         {
           headers: {
@@ -120,7 +120,7 @@ useEffect(() => {
   const fetchIncome = async () => {
     if (!userId) return;
     try {
-      const res = await axios.get("http://localhost:3000/api/income", {
+      const res = await axios.get("https://financio-qskj.onrender.com/api/income", {
         params: { userId },
       });
       const incomeData = res.data[0] || {};
@@ -138,7 +138,7 @@ useEffect(() => {
   const fetchExpenses = async () => {
     if (!userId) return;
     try {
-      const res = await axios.get("http://localhost:3000/exp/expense", {
+      const res = await axios.get("https://financio-qskj.onrender.com/exp/expense", {
         params: { userId },
       });
       const expenseData = Array.isArray(res.data) ? res.data : [];
@@ -167,7 +167,7 @@ useEffect(() => {
     if (!userId) return;
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/getBudgetplanning`,
+        `https://financio-qskj.onrender.com/exp/getBudgetplanning`,
         {
           params: { userId },
         }
@@ -189,7 +189,7 @@ useEffect(() => {
   const getBudgetInfo = async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:3000/exp/getBudgetinfo`, {
+      const res = await axios.get(`https://financio-qskj.onrender.com/exp/getBudgetinfo`, {
         params: { userId },
       });
       setBudgetInfo(res.data || null);
@@ -203,7 +203,7 @@ useEffect(() => {
   const getSpentMoney = async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:3000/exp/getspentmoney`, {
+      const res = await axios.get(`https://financio-qskj.onrender.com/exp/getspentmoney`, {
         params: { userId },
       });
       const data = res.data || {};
@@ -252,7 +252,7 @@ useEffect(() => {
       return;
     }
     try {
-      await axios.post("http://localhost:3000/exp/Budgetplan", {
+      await axios.post("https://financio-qskj.onrender.com/exp/Budgetplan", {
         userId,
         budgetType,
         Budgetdate,

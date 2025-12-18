@@ -34,7 +34,7 @@ export const Navbar = () => {
       if (!userId) return;
 
       const res = await axios.get(
-        `http://localhost:3000/auth/me?userId=${userId}`
+        `https://financio-qskj.onrender.com/auth/me?userId=${userId}`
       );
 
       setUsername(res.data.name);

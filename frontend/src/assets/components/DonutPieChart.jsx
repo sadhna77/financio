@@ -26,7 +26,7 @@ const DonutExpenseTable = ({ budgetType }) => {
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/exp/active-budget-expense", {
+      const res = await axios.get("https://financio-qskj.onrender.com/exp/active-budget-expense", {
         params: { userId, budgetType },
       });
       const expenses = Array.isArray(res.data) ? res.data : [];

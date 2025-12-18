@@ -15,7 +15,7 @@ const CategoryExpensePie = () => {
 
   const fetchCategorySummary = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/exp/category-summary/${userId}`);
+      const res = await axios.get(`https://financio-qskj.onrender.com/exp/category-summary/${userId}`);
       const sorted = res.data.sort((a, b) => b.totalAmount - a.totalAmount);
       setData(sorted);
       if (sorted.length > 0) setTopCategory(sorted[0]); // highest spending category

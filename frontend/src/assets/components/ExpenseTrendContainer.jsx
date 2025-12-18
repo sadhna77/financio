@@ -41,7 +41,7 @@ export default function TrendGraph() {
   const fetchTrendData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/budget-trend/${userId}`
+        `https://financio-qskj.onrender.com/exp/budget-trend/${userId}`
       );
       console.log("Trend data:", res.data);
       setTrend(res.data.trend);
@@ -58,7 +58,7 @@ export default function TrendGraph() {
   const fetchDailyCheck = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/daily-check/${userId}`
+        `https://financio-qskj.onrender.com/exp/daily-check/${userId}`
       );
       setDatastatus(res.data.status);
     } catch (err) {

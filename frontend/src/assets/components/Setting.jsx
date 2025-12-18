@@ -41,7 +41,7 @@ export const Setting = () => {
   const fetchUser = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/auth/me?userId=${userId}`
+        `https://financio-qskj.onrender.com/auth/me?userId=${userId}`
       );
       setProfilePic(res.data.profilePic);
       setEditName(res.data.name);
@@ -56,7 +56,7 @@ export const Setting = () => {
   const fetchBudgets = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/getall/${userId}`
+        `https://financio-qskj.onrender.com/exp/getall/${userId}`
       );
       setBudgets(res.data.budgets || []);
     } catch (err) {
@@ -83,7 +83,7 @@ export const Setting = () => {
       setProfilePic(base64);
 
       try {
-        await axios.put("http://localhost:3000/auth/edit-image", {
+        await axios.put("https://financio-qskj.onrender.com/auth/edit-image", {
           userId,
           profileImage: base64,
         });
@@ -102,7 +102,7 @@ export const Setting = () => {
   const handleNameUpdate = async () => {
     if (editName.length < 3) return toast.error("Name too short");
     try {
-      await axios.put("http://localhost:3000/auth/edit-name", {
+      await axios.put("https://financio-qskj.onrender.com/auth/edit-name", {
         userId,
         name: editName,
       });
@@ -120,7 +120,7 @@ export const Setting = () => {
       return toast.error("Password must be 8+ characters");
 
     try {
-      await axios.put("http://localhost:3000/auth/edit-password", {
+      await axios.put("https://financio-qskj.onrender.com/auth/edit-password", {
         userId,
         oldPassword: oldPass,
         newPassword: newPass,
@@ -139,7 +139,7 @@ export const Setting = () => {
   // ---------------------------
   const handleSalaryUpdate = async () => {
     try {
-      await axios.post("http://localhost:3000/user/update-salary", {
+      await axios.post("https://financio-qskj.onrender.com/user/update-salary", {
         userId,
         salary,
       });
@@ -157,7 +157,7 @@ const deleteBudget = async (id) => {
     const confirmed = window.confirm("Are you sure you want to delete this budget?");
     if (!confirmed) return;
 
-    await axios.delete(`http://localhost:3000/exp/delete-budget/${id}`, {
+    await axios.delete(`https://financio-qskj.onrender.com/exp/delete-budget/${id}`, {
       data: { userId }  // 👈 required
     });
 

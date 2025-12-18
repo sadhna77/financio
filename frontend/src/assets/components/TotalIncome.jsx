@@ -11,7 +11,7 @@ const TotalSalary = ({income}) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/exp/daily-check/${userId}`
+        `https://financio-qskj.onrender.com/exp/daily-check/${userId}`
       );
 
       // Backend returns: todaySpent

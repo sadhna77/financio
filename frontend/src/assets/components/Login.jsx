@@ -17,7 +17,7 @@ const Login = ({ onClose, onLoginSuccess }) => {
   // ✅ useMutation hook
   const mutation = useMutation({
     mutationFn: async ({ email, password }) => {
-      const res = await axios.post("http://localhost:3000/auth/login", {
+      const res = await axios.post("https://financio-qskj.onrender.com/auth/login", {
         email,
         password,
       });

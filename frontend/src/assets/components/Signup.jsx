@@ -29,7 +29,7 @@ const Signup = ({ onClose, email }) => {
   // ✅ useMutation hook
   const mutation = useMutation({
     mutationFn: async ({ name, email, password }) => {
-      const res = await axios.post("http://localhost:3000/auth/register", {
+      const res = await axios.post("https://financio-qskj.onrender.com/auth/register", {
         name,
         email,
         password,
